@@ -4,23 +4,22 @@ metadata:
   name: mycalcapp
   namespace: calapp
   labels:
-    app: app
+    app: mycalcapp
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: app
+      app: mycalcapp
   template:
     metadata:
       labels:
-        app: app
+        app: mycalcapp
     spec:
       containers:
         - name: calcappcont
-          image: sauravnirala/pythoncalculator:latest
+          image: sauravnirala/pythoncalculator:v1
           ports:
             - containerPort: 5000
-
 ---
 apiVersion: v1
 kind: Service
@@ -29,7 +28,7 @@ metadata:
   namespace: calapp
 spec:
   selector:
-    app: app
+    app: mycalcapp
   ports:
     - protocol: TCP
       port: 80
