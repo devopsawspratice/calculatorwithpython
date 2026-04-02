@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: calcapp
-  namespace: myapp
+  name: mycalcapp
+  namespace: calapp
 spec:
   replicas: 2
   selector:
@@ -14,7 +14,7 @@ spec:
         app: calcapp
     spec:
       containers:
-        - name: calcapp
+        - name: calcappcont
           image: sauravnirala/pythoncalculator:latest
           ports:
             - containerPort: 3000
@@ -23,8 +23,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: calcapp-service
-  namespace: myapp
+  name: mycalcapp-service
+  namespace: calapp
 spec:
   selector:
     app: calcapp
