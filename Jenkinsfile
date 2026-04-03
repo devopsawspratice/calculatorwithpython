@@ -13,7 +13,7 @@ pipeline {
         GIT_BRANCH        = 'main'
 
         K8S_NAMESPACE     = 'calapp'
-        CAL_PORT         = '3000'
+        CAL_PORT         = '5000'
 		SONARQUBE_ENV = 'sq'
     }
 
@@ -77,7 +77,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'nexuscred', passwordVariable: 'passwd', usernameVariable: 'username')]) 
                 {
                     sh """
-                    python3 -m twine upload --repository-url http://13.203.19.219:8081/repository/pypi-hosted/  -u $username -p $passwd dist/*
+                    python3 -m twine upload --repository-url http://15.206.190.51:8081/repository/pypi-hosted/  -u $username -p $passwd dist/*
                     """
                 }
             }
