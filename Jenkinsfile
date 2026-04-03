@@ -9,7 +9,7 @@ pipeline {
         TODO_IMAGE        = "${DOCKERHUB_USER}/pythoncalculator:${IMAGE_TAG}"
         TODO_LATEST       = "${DOCKERHUB_USER}/pythoncalculator:latest"
 
-        GIT_REPO_URL      = 'https://github.com/sauravnirala/calculatorwithpython.git'
+        GIT_REPO_URL      = 'https://github.com/devopsawspratice/calculatorwithpython.git'
         GIT_BRANCH        = 'main'
 
         K8S_NAMESPACE     = 'calapp'
