@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+tools {
+    sonarQubeScanner 'sonar-scanner'
+}
     environment {
         DOCKERHUB_USER    = 'devopsawspratice'
         TODO_REPO         = 'pythoncalculator'
