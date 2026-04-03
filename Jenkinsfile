@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_USER    = 'sauravnirala'
+        DOCKERHUB_USER    = 'devopsawspratice'
         TODO_REPO         = 'pythoncalculator'
         IMAGE_TAG         = "${env.BUILD_NUMBER}"
 
